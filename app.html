@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Ken Klein</title>
+    <title>CENTIPEDE: A Coding Project by Ken Klein</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,14 +16,18 @@
 <link href="/css/site.css" rel="stylesheet">
 <link rel="icon" type="image/png" href="img/favicon-32x32.png">
 
+<!--Font Imports-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet"> 
 </head>
 
 <body class="d-flex flex-column h-100">
 <!-- ==== Nav Section ==== -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/favicon-32x32.png" class="d-inline-block align-text-bottom"
-            alt="Ken Codes Logo" width="30" height="24"> APP NAME</a>
+        <a class="navbar-brand logoFont" href="#"><img src="img/favicon-32x32.png" class="d-inline-block align-text-bottom"
+            alt="Ken Codes Logo" width="30" height="24"> CENTIPEDE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,7 +44,7 @@
                     <a class="nav-link" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/Rating001/CENTIPEDE.git">Git Repo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="http://kencodes.net/portfolio/portfolio.html">About</a>
@@ -51,8 +55,42 @@
 </nav>
 <!-- ==== Main Section ==== -->
 <main class="flex-shrink-0">
-    <div class="container">
-
+    <div class="container mt-3">
+        <div class="row row-cols-1 row-cols-lg-2">
+            <div class="col border-end border-2">
+                <h1><span class="logoFont">CENTIPEDE</span>: A Coding Project</h1>
+                <h4 class="lead">
+                    It may not have 100 legs but it has them in spirit! This javascript coding exercise uses loops. The challenge is to write a program that displays the numbers from 0 to 100 (or your inputs) and displays the even numbers in <strong>Bold</strong>.
+                </h4>
+                <h2 class="mt-5 border-bottom border-2">Instructions</h2>
+                <p>1) Enter a starting value and an ending value.</p>
+                <p>2) Press the "March Those Legs!"" button and the values will appear.</p>
+            </div>
+            <div class="col">
+                <div>
+                    <h5>Enter Values (Start and End)</h5>
+                    <form class="row gy-2 gx-3">
+                        <div class="col">
+                            <input id="startValue" type="number" class="form-control" placeholder="Starting Value" value="0" aria-label="Start Value">
+                        </div>
+                        <div class="col">
+                            <input id="endValue" type="number" class="form-control" placeholder="End Value" value="100" aria-label="End Value">
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <button type="button" id="btnSubmit" class="btn btn-dark btn-lg">March Those Legs!</button>
+                        </div>
+                    </form>
+                    <h2 class="mt-5 border-bottom border-2">Results</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <tbody id="results">
+                                <!--Results Go Here-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
     <!-- ==== Footer Section ==== -->
@@ -90,6 +128,9 @@
     </script>
 
     <script src="/js/site.js"></script>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click",getValues);
+    </script>
 </body>
 
 </html>
