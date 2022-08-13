@@ -1,11 +1,7 @@
-
-
-
-
-
 //Get the values from the App Page
 //Starts or Controller Function
 function getValues() {
+    
     //Get values from the page
     let startValue = document.getElementById("startValue").value;
     let endValue = document.getElementById("endValue").value;
@@ -24,10 +20,6 @@ function getValues() {
     } else {
         alert("You must enter integers.");
     }
-
-
-
-
 }
 
 //Generate numbers from 'startValue' to 'endValue' once the button is pressed
@@ -49,7 +41,6 @@ function generateNumbers(startValue,endValue) {
 //Display or View Function
 function displayNumbers(numbers) {
     
-
     let templateRows = "";
 
     for (let index = 0; index < numbers.length; index++) {
@@ -66,5 +57,4 @@ function displayNumbers(numbers) {
     }
 
     document.getElementById("results").innerHTML = templateRows;
-
 }
