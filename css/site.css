@@ -2,19 +2,120 @@
     --primary-color: #1d5888;
     --secondary-color: #35cf5b;
     --dark-color: #292929;
-    --white-color: #dff3e4;
+    --light-color: #dff3e4;
+    --social-color: #cccccc;
+
+    --foreground: var(--dark-color);
+    --background: var(--light-color);
 }
 
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #9ccdf5;
+        --secondary-color: #35cf5b;
+        --dark-color: #292929;
+        --white-color: #dff3e4;
+
+        --foreground: var(--white-color);
+        --background: var(--dark-color);
+    }
+} */
+.lightMode{
+    --primary-color: #1d5888;
+    --secondary-color: #35cf5b;
+    --dark-color: #292929;
+    --light-color: #dff3e4;
+        
+    --foreground: var(--dark-color);
+    --background: var(--light-color);
+    transition: all .5s;
+}
+.darkMode{
+    --primary-color: #9ccdf5;
+    --secondary-color: #35cf5b;
+    --dark-color: #292929;
+    --white-color: #dff3e4;
+
+    --foreground: var(--light-color);
+    --background: var(--dark-color);
+    transition: all .5s;
+}
+
+.dark-mode-toggle {
+    background: transparent;
+    cursor: pointer;
+    border:none;
+}
+
+.dark-toggle {
+    fill: var(--background);
+    stroke: var(--foreground);
+    stroke-width: 1;
+    transition: stroke-width, .5s;
+}
+
+.dark-toggle:hover {
+
+    stroke-width: 3;
+    stroke: var(--foreground);
+}
+
+.noLine {
+    text-decoration: none;
+    font-size: 1.25rem;
+    color:var(--foreground);
+    transition: color .3s ease;
+}
+
+.noLine:hover {
+    color:var(--background);
+}
+
+.btnSubmit{
+    text-decoration: none;
+    border: 1px solid var(--foreground);
+    background-color:transparent;
+    color:var(--foreground);
+    cursor:pointer;
+    font-size: 1.25rem;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.btnSubmit:hover {
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+.tryButton {
+    border: 1px solid var(--foreground);
+    background-color:transparent;
+    color:var(--foreground);
+    cursor:pointer;
+    font-size: 1.25rem;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.tryButton:hover {
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+.results{
+    color:var(--foreground);
+}
 .even {
     font-weight: bold;
+    color:var(--foreground);
 }
 
 .odd {
     font-weight: 100;
+    color:var(--foreground);
 }
 
 body {
-    color: var(--dark-color);
+    background: var(--background);
+    color: var(--foreground);
 }
 
 nav {
@@ -22,7 +123,29 @@ nav {
 }
 
 footer {
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: .5rem;
     background-color: var(--dark-color);
+}
+
+footer .social>a {
+    color: var(--social-color);
+    opacity: 0.75;
+}
+
+footer .social>a:hover{
+    opacity: 0.90;
+    color: var(--secondary-color)
+}
+
+.kenCodes {
+    cursor: pointer;
 }
 
 .logoFont {
@@ -31,15 +154,6 @@ footer {
 
 h1,h2,h3,h4,h5,h6 {
     color: var(--primary-color);
-}
-
-footer {
-    padding-right: 1rem
-}
-
-footer .social>a {
-    color: var(--white-color);
-    opacity: 0.75;
 }
 
 .bsicon {
@@ -63,18 +177,13 @@ footer .social>a {
 }
 
 code[class*="language-"],
-pre[class*="language-"] {
-white-space: pre-wrap;
-word-break: break-all;
-word-wrap: break-word;
+    pre[class*="language-"] {
+        white-space: pre-wrap;
+        word-break: break-all;
+        word-wrap: break-word;
 }
 
 main>.container {
     padding: 60px 15px 0;
     margin-bottom: 5rem;
-}
-
-footer .social>a:hover{
-    opacity: 0.90;
-    color: var(--secondary-color)
 }
